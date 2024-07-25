@@ -1,5 +1,5 @@
 {
-  "name": "pitsmagento/isoqrbill",
+  "name": "pitsmagento2/isoqrbill",
   "description": "Pits ISO QR Invoice Lib",
   "require": {
      "php": ">=7.3.0"
