@@ -519,7 +519,7 @@ class AssertingContextualValidator implements ContextualValidatorInterface
         $this->expectNoValidate = true;
     }
 
-    public function expectValidation($call, $propertyPath, $value, $group, $constraints, ConstraintViolationInterface $violation = null)
+    public function expectValidation($call, $propertyPath, $value, $group, $constraints, ?ConstraintViolationInterface $violation = null)
     {
         $this->expectedAtPath[$call] = $propertyPath;
         $this->expectedValidate[$call] = [$value, $group, $constraints, $violation];

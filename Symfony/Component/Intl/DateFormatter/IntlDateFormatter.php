@@ -132,7 +132,7 @@ abstract class IntlDateFormatter
      * @throws MethodArgumentValueNotImplementedException When $locale different than "en" or null is passed
      * @throws MethodArgumentValueNotImplementedException When $calendar different than GREGORIAN is passed
      */
-    public function __construct(?string $locale, ?int $datetype, ?int $timetype, $timezone = null, ?int $calendar = self::GREGORIAN, string $pattern = null)
+    public function __construct(?string $locale, ?int $datetype, ?int $timetype, $timezone = null, ?int $calendar = self::GREGORIAN, ?string $pattern = null)
     {
         if ('en' !== $locale && null !== $locale) {
             throw new MethodArgumentValueNotImplementedException(__METHOD__, 'locale', $locale, 'Only the locale "en" is supported');
@@ -238,7 +238,7 @@ abstract class IntlDateFormatter
      *
      * @throws MethodNotImplementedException
      */
-    public function formatObject(object $object, $format = null, string $locale = null)
+    public function formatObject(object $object, ?$format = null, ?string $locale = null)
     {
         throw new MethodNotImplementedException(__METHOD__);
     }
@@ -424,7 +424,7 @@ abstract class IntlDateFormatter
      *
      * @throws MethodArgumentNotImplementedException When $position different than null, behavior not implemented
      */
-    public function parse(string $value, int &$position = null)
+    public function parse(string $value, ?int &$position = null)
     {
         // We don't calculate the position when parsing the value
         if (null !== $position) {

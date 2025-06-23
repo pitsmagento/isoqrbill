@@ -204,7 +204,7 @@ class StructuredAddress implements AddressInterface, SelfValidatableInterface, Q
 
         $metadata->addPropertyConstraints('buildingNumber', [
             new Assert\Length([
-                'max' => 16
+                'max' => 200
             ])
         ]);
 

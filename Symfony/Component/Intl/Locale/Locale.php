@@ -159,7 +159,7 @@ abstract class Locale
      *
      * @throws MethodNotImplementedException
      */
-    public static function getDisplayLanguage(string $locale, string $inLocale = null)
+    public static function getDisplayLanguage(string $locale, ?string $inLocale = null)
     {
         throw new MethodNotImplementedException(__METHOD__);
     }
@@ -176,7 +176,7 @@ abstract class Locale
      *
      * @throws MethodNotImplementedException
      */
-    public static function getDisplayName(string $locale, string $inLocale = null)
+    public static function getDisplayName(string $locale, ?string $inLocale = null)
     {
         throw new MethodNotImplementedException(__METHOD__);
     }
@@ -193,7 +193,7 @@ abstract class Locale
      *
      * @throws MethodNotImplementedException
      */
-    public static function getDisplayRegion(string $locale, string $inLocale = null)
+    public static function getDisplayRegion(string $locale, ?string $inLocale = null)
     {
         throw new MethodNotImplementedException(__METHOD__);
     }
@@ -210,7 +210,7 @@ abstract class Locale
      *
      * @throws MethodNotImplementedException
      */
-    public static function getDisplayScript(string $locale, string $inLocale = null)
+    public static function getDisplayScript(string $locale, ?string $inLocale = null)
     {
         throw new MethodNotImplementedException(__METHOD__);
     }
@@ -227,7 +227,7 @@ abstract class Locale
      *
      * @throws MethodNotImplementedException
      */
-    public static function getDisplayVariant(string $locale, string $inLocale = null)
+    public static function getDisplayVariant(string $locale, ?string $inLocale = null)
     {
         throw new MethodNotImplementedException(__METHOD__);
     }
@@ -308,7 +308,7 @@ abstract class Locale
      *
      * @throws MethodNotImplementedException
      */
-    public static function lookup(array $langtag, string $locale, bool $canonicalize = false, string $default = null)
+    public static function lookup(array $langtag, string $locale, bool $canonicalize = false, ?string $default = null)
     {
         throw new MethodNotImplementedException(__METHOD__);
     }

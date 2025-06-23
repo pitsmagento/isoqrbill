@@ -112,7 +112,7 @@ abstract class Constraint
      *                                       array, but getDefaultOption() returns
      *                                       null
      */
-    public function __construct($options = null, array $groups = null, $payload = null)
+    public function __construct($options = null, mixed $groups = null, $payload = null)
     {
         $options = $this->normalizeOptions($options);
         if (null !== $groups) {

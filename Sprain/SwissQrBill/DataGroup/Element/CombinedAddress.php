@@ -86,9 +86,9 @@ class CombinedAddress implements AddressInterface, SelfValidatableInterface, QrC
         ?string $addressLine1,
         string $addressLine2,
         string $country,
-        string $postalcode = NULL,
-        string $city = NULL,
-        string $street = NULL,
+        ?string $postalcode = NULL,
+        ?string $city = NULL,
+        ?string $street = NULL,
         ?string $buildingNumber= NULL
     ): self {
         $combinedAddress = new self();
