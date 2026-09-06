@@ -7330,12 +7330,12 @@ class tcpdf {
 					}
 				}
 				imagepng($imgalpha, $tempfile_alpha);
-				imagedestroy($imgalpha);
+				unset($imgalpha);
 				// extract image without alpha channel
 				$imgplain = imagecreatetruecolor($wpx, $hpx);
 				imagecopy($imgplain, $img, 0, 0, 0, 0, $wpx, $hpx);
 				imagepng($imgplain, $tempfile_plain);
-				imagedestroy($imgplain);
+				unset($imgplain);
 				$parsed = true;
 			} catch (Exception $e) {
 				// GD fails
@@ -23010,8 +23010,8 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 			$error_message = sprintf('SVG Error: %s at line %d', xml_error_string(xml_get_error_code($this->parser)), xml_get_current_line_number($this->parser));
 			$this->Error($error_message);
 		}
-		// free this XML parser
-		xml_parser_free($this->parser);
+		// xml_parser_free() is a no-op since PHP 8.0 and deprecated in PHP 8.5+
+		unset($this->parser);
 		// restore previous graphic state
 		$this->_out($this->epsmarker.'Q');
 		// restore graphic vars

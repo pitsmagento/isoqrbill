@@ -41,7 +41,7 @@ class PngWriter extends AbstractWriter
 
         $string = $this->imageToString($image);
 
-        imagedestroy($image);
+        unset($image);
 
         if ($qrCode->getValidateResult()) {
             $reader = new QrReader($string, QrReader::SOURCE_TYPE_BLOB);
@@ -61,7 +61,7 @@ class PngWriter extends AbstractWriter
         $baseImage = $this->createBaseImage($baseSize, $data, $qrCode);
         $interpolatedImage = $this->createInterpolatedImage($baseImage, $data, $qrCode);
 
-        imagedestroy($baseImage);
+        unset($baseImage);
 
         return $interpolatedImage;
     }
@@ -138,7 +138,7 @@ class PngWriter extends AbstractWriter
 
         imagecopyresampled($sourceImage, $logoImage, intval($logoX), intval($logoY), 0, 0, $logoWidth, $logoHeight, $logoSourceWidth, $logoSourceHeight);
 
-        imagedestroy($logoImage);
+        unset($logoImage);
 
         return $sourceImage;
     }
@@ -172,7 +172,7 @@ class PngWriter extends AbstractWriter
         // Copy source image to target image
         imagecopyresampled($targetImage, $sourceImage, 0, 0, 0, 0, $sourceWidth, $sourceHeight, $sourceWidth, $sourceHeight);
 
-        imagedestroy($sourceImage);
+        unset($sourceImage);
 
         switch ($labelAlignment) {
             case LabelAlignment::LEFT:
